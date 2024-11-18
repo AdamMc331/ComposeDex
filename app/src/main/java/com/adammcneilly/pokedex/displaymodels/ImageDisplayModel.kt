@@ -2,7 +2,6 @@ package com.adammcneilly.pokedex.displaymodels
 
 import androidx.annotation.DrawableRes
 
-
 sealed interface ImageDisplayModel {
     data class Remote(
         val url: String,

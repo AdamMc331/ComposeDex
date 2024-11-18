@@ -14,7 +14,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import com.adammcneilly.pokedex.displaymodels.ImageDisplayModel
 import com.adammcneilly.pokedex.displaymodels.PokemonDisplayModel
@@ -46,7 +45,7 @@ fun PokemonListCard(
                     image = pokemon.image,
                     contentDescription = null,
                     modifier = Modifier
-                        .size(DexTheme.dimensions.imageSizeDefault,
+                        .size(DexTheme.dimensions.imageSizeDefault),
                 )
             }
         }
@@ -54,9 +53,7 @@ fun PokemonListCard(
 }
 
 @Composable
-private fun PokemonNameTypes(
-    pokemon: PokemonDisplayModel,
-) {
+private fun PokemonNameTypes(pokemon: PokemonDisplayModel) {
     Column(
         verticalArrangement = Arrangement.spacedBy(DexTheme.dimensions.itemSpacingDefault),
     ) {
@@ -70,9 +67,7 @@ private fun PokemonNameTypes(
 }
 
 @Composable
-private fun PokemonTypes(
-    pokemon: PokemonDisplayModel,
-) {
+private fun PokemonTypes(pokemon: PokemonDisplayModel) {
     Column(
         verticalArrangement = Arrangement.spacedBy(DexTheme.dimensions.itemSpacingCompact),
     ) {
@@ -83,9 +78,7 @@ private fun PokemonTypes(
 }
 
 @Composable
-private fun PokemonTypeChip(
-    type: PokemonType,
-) {
+private fun PokemonTypeChip(type: PokemonType) {
     Text(
         text = type.name,
         style = MaterialTheme.typography.labelSmall,
@@ -93,8 +86,7 @@ private fun PokemonTypeChip(
             .background(
                 color = MaterialTheme.colorScheme.inversePrimary,
                 shape = CircleShape,
-            )
-            .padding(DexTheme.dimensions.chipPadding),
+            ).padding(DexTheme.dimensions.chipPadding),
     )
 }
 

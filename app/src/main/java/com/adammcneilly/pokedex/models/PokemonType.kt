@@ -1,0 +1,25 @@
+package com.adammcneilly.pokedex.models
+
+enum class PokemonType {
+    BUG,
+    DARK,
+    DRAGON,
+    ELECTRIC,
+    FAIRY,
+    FIGHTING,
+    FIRE,
+    FLYING,
+    GHOST,
+    GRASS,
+    GROUND,
+    ICE,
+    NORMAL,
+    POISON,
+    PSYCHIC,
+    ROCK,
+    SHADOW,
+    STEEL,
+    STELLAR,
+    WATER,
+    UNKNOWN,
+}

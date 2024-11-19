@@ -73,6 +73,7 @@ dependencies {
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling)
     implementation(libs.hilt.android)
+    implementation(libs.material.kolor)
     implementation(libs.square.moshi.kotlin)
     implementation(libs.square.retrofit)
     implementation(libs.square.retrofit.converter.moshi)
@@ -84,6 +85,7 @@ dependencies {
 
     annotationProcessor(libs.androidx.room.compiler)
 
+    testImplementation(libs.google.testparameterinjector)
     testImplementation(libs.junit)
 
     androidTestImplementation(platform(libs.compose.bom))

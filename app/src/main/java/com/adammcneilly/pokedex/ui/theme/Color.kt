@@ -1,6 +1,6 @@
 @file:Suppress("MagicNumber")
 
-package com.adammcneilly.pokedex.theme
+package com.adammcneilly.pokedex.ui.theme
 
 import androidx.compose.ui.graphics.Color
 import com.adammcneilly.pokedex.models.PokemonType

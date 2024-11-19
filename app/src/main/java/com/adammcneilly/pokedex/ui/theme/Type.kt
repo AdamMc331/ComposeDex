@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex.theme
+package com.adammcneilly.pokedex.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -102,7 +102,7 @@ apollo {
         packageName.set("com.adammcneilly.pokedex")
         introspection {
             endpointUrl.set("https://beta.pokeapi.co/graphql/v1beta")
-            schemaFile.set(file("src/main/graphql/schema.json"))
+            schemaFile.set(file("src/main/graphql/com/adammcneilly/pokedex/schema.json"))
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex.theme
+package com.adammcneilly.pokedex.ui.theme
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.staticCompositionLocalOf

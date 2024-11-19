@@ -7,7 +7,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import app.cash.paparazzi.Paparazzi
-import com.adammcneilly.pokedex.theme.DexTheme
+import com.adammcneilly.pokedex.ui.theme.DexTheme
 import com.google.testing.junit.testparameterinjector.TestParameter
 import com.google.testing.junit.testparameterinjector.TestParameterInjector
 import org.junit.Rule

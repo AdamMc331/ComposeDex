@@ -18,9 +18,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.adammcneilly.pokedex.displaymodels.ImageDisplayModel
 import com.adammcneilly.pokedex.displaymodels.PokemonDisplayModel
 import com.adammcneilly.pokedex.models.PokemonType
-import com.adammcneilly.pokedex.theme.DexTheme
-import com.adammcneilly.pokedex.theme.PokemonTypeTheme
 import com.adammcneilly.pokedex.ui.components.ImageWrapper
+import com.adammcneilly.pokedex.ui.theme.DexTheme
+import com.adammcneilly.pokedex.ui.theme.PokemonTypeTheme
 
 @Composable
 fun PokemonListCard(

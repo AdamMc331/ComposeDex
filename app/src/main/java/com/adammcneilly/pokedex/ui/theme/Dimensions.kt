@@ -12,6 +12,7 @@ data class Dimensions(
     val imageSizeDefault: Dp,
     val itemSpacingCompact: Dp,
     val itemSpacingDefault: Dp,
+    val listItemSpacing: Dp,
     val screenPadding: Dp,
 ) {
     val chipPadding = PaddingValues(
@@ -28,6 +29,7 @@ val LocalDimensions = staticCompositionLocalOf {
         imageSizeDefault = 0.dp,
         itemSpacingCompact = 0.dp,
         itemSpacingDefault = 0.dp,
+        listItemSpacing = 0.dp,
         screenPadding = 0.dp,
     )
 }

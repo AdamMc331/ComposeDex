@@ -8,7 +8,7 @@ import org.junit.Test
 
 class PokemonListCardPaparazziTest : BasePaparazziTest() {
     private val testPokemon = PokemonDisplayModel(
-        id = "1",
+        id = 1,
         name = "Bulbasaur",
         types = listOf(PokemonType.GRASS, PokemonType.POISON),
         image = ImageDisplayModel.Placeholder,

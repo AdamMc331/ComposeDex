@@ -1,5 +1,7 @@
 package com.adammcneilly.pokedex.models
 
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+
 enum class PokemonType {
     BUG,
     DARK,
@@ -22,4 +24,9 @@ enum class PokemonType {
     STELLAR,
     WATER,
     UNKNOWN,
+}
+
+class PokemonTypePreviewParameterProvider : PreviewParameterProvider<PokemonType> {
+    override val values: Sequence<PokemonType>
+        get() = PokemonType.entries.asSequence()
 }

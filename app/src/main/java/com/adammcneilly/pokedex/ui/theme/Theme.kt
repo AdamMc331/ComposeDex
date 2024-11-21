@@ -24,9 +24,10 @@ private val dexDimensions = Dimensions(
     chipPaddingHorizontal = 12.dp,
     chipPaddingVertical = 4.dp,
     componentPadding = 16.dp,
-    imageSizeDefault = 56.dp,
+    imageSizeDefault = 80.dp,
     itemSpacingCompact = 8.dp,
     itemSpacingDefault = 16.dp,
+    listItemSpacing = 16.dp,
     screenPadding = 16.dp,
 )
 

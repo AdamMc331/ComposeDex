@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.lifecycleScope
 import com.adammcneilly.pokedex.data.remote.ApolloPokeAPIService
-import com.adammcneilly.pokedex.theme.DexTheme
+import com.adammcneilly.pokedex.ui.theme.DexTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

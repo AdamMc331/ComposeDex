@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex.theme
+package com.adammcneilly.pokedex.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

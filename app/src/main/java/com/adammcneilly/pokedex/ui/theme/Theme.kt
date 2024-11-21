@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex.theme
+package com.adammcneilly.pokedex.ui.theme
 
 import android.annotation.TargetApi
 import android.os.Build

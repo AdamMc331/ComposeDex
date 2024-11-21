@@ -12,36 +12,34 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import javax.inject.Inject
 
-class ApolloPokeAPIService
-    @Inject
-    constructor(
-        private val apolloClient: ApolloClient,
-    ) : PokemonRepository {
-        override fun observePokemonList(): Flow<DataRequest<List<Pokemon>>> {
-            @Suppress("MagicNumber")
-            val query = PokemonSummaryListQuery(
-                limit = Optional.present(151),
-            )
+class ApolloPokeAPIService @Inject constructor(
+    private val apolloClient: ApolloClient,
+) : PokemonRepository {
+    override fun observePokemonList(): Flow<DataRequest<List<Pokemon>>> {
+        @Suppress("MagicNumber")
+        val query = PokemonSummaryListQuery(
+            limit = Optional.present(151),
+        )
 
-            return apolloClient
-                .query(query)
-                .toFlow()
-                .map { data ->
-                    val pokemonList = data
-                        .data
-                        ?.pokemon_v2_pokemon
-                        ?.map(PokemonSummaryListQuery.Pokemon_v2_pokemon::toPokemon)
+        return apolloClient
+            .query(query)
+            .toFlow()
+            .map { data ->
+                val pokemonList = data
+                    .data
+                    ?.pokemon_v2_pokemon
+                    ?.map(PokemonSummaryListQuery.Pokemon_v2_pokemon::toPokemon)
 
-                    if (pokemonList != null) {
-                        DataRequest.Success(pokemonList)
-                    } else {
-                        DataRequest.Error(IllegalStateException("Pokemon list is null"))
-                    }
-                }.onStart {
-                    emit(DataRequest.Loading)
+                if (pokemonList != null) {
+                    DataRequest.Success(pokemonList)
+                } else {
+                    DataRequest.Error(IllegalStateException("Pokemon list is null"))
                 }
-        }
+            }.onStart {
+                emit(DataRequest.Loading)
+            }
     }
+}
 
 private fun PokemonSummaryListQuery.Pokemon_v2_pokemon.toPokemon(): Pokemon =
     Pokemon(

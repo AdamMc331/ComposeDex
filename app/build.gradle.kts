@@ -4,6 +4,7 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
     id("kotlin-android")
+    alias(libs.plugins.apollo.graphql)
     alias(libs.plugins.compose.compiler)
 }
 
@@ -66,6 +67,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.apollo.runtime)
     implementation(libs.coil.compose)
     implementation(libs.coil.okhttp)
     implementation(libs.compose.material)
@@ -93,6 +95,16 @@ dependencies {
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.compose.ui.test.junit)
     androidTestImplementation(libs.hilt.android.testing)
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.adammcneilly.pokedex")
+        introspection {
+            endpointUrl.set("https://beta.pokeapi.co/graphql/v1beta")
+            schemaFile.set(file("src/main/graphql/com/adammcneilly/pokedex/schema.json"))
+        }
+    }
 }
 
 tasks.formatKotlinMain {

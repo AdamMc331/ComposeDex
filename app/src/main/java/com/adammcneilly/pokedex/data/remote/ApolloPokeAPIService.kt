@@ -35,7 +35,8 @@ class ApolloPokeAPIService @Inject constructor(
                 } else {
                     DataRequest.Error(IllegalStateException("Pokemon list is null"))
                 }
-            }.onStart {
+            }
+            .onStart {
                 emit(DataRequest.Loading)
             }
     }

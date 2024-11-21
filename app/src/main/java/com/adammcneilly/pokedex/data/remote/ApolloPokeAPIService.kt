@@ -18,6 +18,7 @@ class ApolloPokeAPIService
         private val apolloClient: ApolloClient,
     ) : PokemonRepository {
         override fun observePokemonList(): Flow<DataRequest<List<Pokemon>>> {
+            @Suppress("MagicNumber")
             val query = PokemonSummaryListQuery(
                 limit = Optional.present(151),
             )
@@ -26,7 +27,10 @@ class ApolloPokeAPIService
                 .query(query)
                 .toFlow()
                 .map { data ->
-                    val pokemonList = data.data?.pokemon_v2_pokemon?.map(PokemonSummaryListQuery.Pokemon_v2_pokemon::toPokemon)
+                    val pokemonList = data
+                        .data
+                        ?.pokemon_v2_pokemon
+                        ?.map(PokemonSummaryListQuery.Pokemon_v2_pokemon::toPokemon)
 
                     if (pokemonList != null) {
                         DataRequest.Success(pokemonList)

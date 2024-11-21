@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex
+package com.adammcneilly.pokedex.list
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
@@ -86,7 +86,8 @@ private fun PokemonTypeChip(type: PokemonType) {
             .background(
                 color = MaterialTheme.colorScheme.inversePrimary,
                 shape = CircleShape,
-            ).padding(DexTheme.dimensions.chipPadding),
+            )
+            .padding(DexTheme.dimensions.chipPadding),
     )
 }
 

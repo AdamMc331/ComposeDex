@@ -75,6 +75,7 @@ dependencies {
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling)
     implementation(libs.hilt.android)
+    implementation(libs.hilt.navigation.compose)
     implementation(libs.material.kolor)
     implementation(libs.square.moshi.kotlin)
     implementation(libs.square.retrofit)

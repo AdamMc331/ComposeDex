@@ -11,6 +11,7 @@ espresso = "3.6.1"
 gradle = "8.7.2"
 gradleVersionsPlugin = "0.51.0"
 hilt = "2.52"
+hiltNavigationCompose = "1.2.0"
 junit = "4.13.2"
 kotlin = "2.0.21"
 kotlinter = "4.4.1"
@@ -58,6 +59,7 @@ hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt"
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 junit = { module = "junit:junit", version.ref = "junit" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 material-kolor = { module = "com.materialkolor:material-kolor", version.ref = "materialKolor" }

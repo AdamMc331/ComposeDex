@@ -10,4 +10,15 @@ sealed interface DataRequest<out T> {
     data class Error(
         val error: Throwable,
     ) : DataRequest<Nothing>
+
+    fun <R> map(
+        transform: (T) -> R,
+    ): DataRequest<R> =
+        when (this) {
+            is Loading -> Loading
+            is Success -> Success(transform(data))
+            is Error -> Error(error)
+        }
+
+    fun getOrNull(): T? = (this as? Success)?.data
 }

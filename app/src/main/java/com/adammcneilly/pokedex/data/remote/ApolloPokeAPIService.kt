@@ -44,7 +44,7 @@ class ApolloPokeAPIService @Inject constructor(
 
 private fun PokemonSummaryListQuery.Pokemon_v2_pokemon.toPokemon(): Pokemon =
     Pokemon(
-        id = this.id.toString(),
+        id = this.id,
         name = name,
         types = pokemon_v2_pokemontypes.map { gqlType ->
             val typeName = gqlType.pokemon_v2_type?.name.orEmpty()

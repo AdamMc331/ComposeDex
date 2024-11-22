@@ -11,6 +11,7 @@ espresso = "3.6.1"
 gradle = "8.7.2"
 gradleVersionsPlugin = "0.51.0"
 hilt = "2.52"
+hiltNavigationCompose = "1.2.0"
 junit = "4.13.2"
 kotlin = "2.0.21"
 kotlinter = "4.4.1"
@@ -27,6 +28,7 @@ retrofit = "2.11.0"
 room = "2.6.1"
 sortDependencies = "0.8"
 testParameterInjector = "1.18"
+truth = "1.4.4"
 
 [libraries]
 android-material = { module = "com.google.android.material:material", version.ref = "material" }
@@ -52,12 +54,14 @@ compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling
 compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 detekt-gradle-plugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detektGradlePlugin" }
 google-testparameterinjector = { module = "com.google.testparameterinjector:test-parameter-injector", version.ref = "testParameterInjector" }
+google-truth = { module = "com.google.truth:truth", version.ref = "truth" }
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 gradle-versions-plugin = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "gradleVersionsPlugin" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 junit = { module = "junit:junit", version.ref = "junit" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 material-kolor = { module = "com.materialkolor:material-kolor", version.ref = "materialKolor" }

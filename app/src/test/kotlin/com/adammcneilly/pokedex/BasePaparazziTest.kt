@@ -28,7 +28,9 @@ abstract class BasePaparazziTest {
     /**
      * Validates the supplied [content] in both light and dark theme.
      */
-    fun snapshotScreen(content: @Composable () -> Unit) {
+    fun snapshotScreen(
+        content: @Composable () -> Unit,
+    ) {
         paparazzi.snapshot {
             DexTheme(
                 darkTheme = useDarkTheme,

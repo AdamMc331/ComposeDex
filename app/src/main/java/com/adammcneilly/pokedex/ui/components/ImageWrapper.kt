@@ -74,7 +74,9 @@ private fun LocalImage(
 }
 
 @Composable
-private fun PlaceholderImage(modifier: Modifier) {
+private fun PlaceholderImage(
+    modifier: Modifier,
+) {
     Box(
         modifier = modifier
             .background(

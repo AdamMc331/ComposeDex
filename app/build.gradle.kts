@@ -89,6 +89,7 @@ dependencies {
     annotationProcessor(libs.androidx.room.compiler)
 
     testImplementation(libs.google.testparameterinjector)
+    testImplementation(libs.google.truth)
     testImplementation(libs.junit)
 
     androidTestImplementation(platform(libs.compose.bom))

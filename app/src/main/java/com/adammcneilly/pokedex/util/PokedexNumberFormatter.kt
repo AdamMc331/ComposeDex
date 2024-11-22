@@ -5,5 +5,11 @@ object PokedexNumberFormatter {
 
     fun format(
         pokemonId: Int,
-    ): String = pokemonId.toString().padStart(POKEDEX_NUMBER_DIGITS, '0')
+    ): String {
+        require(pokemonId > 0) {
+            "PokemonID must be a positive integer."
+        }
+
+        return pokemonId.toString().padStart(POKEDEX_NUMBER_DIGITS, '0')
+    }
 }

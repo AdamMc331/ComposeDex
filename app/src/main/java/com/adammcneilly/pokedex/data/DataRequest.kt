@@ -13,12 +13,15 @@ sealed interface DataRequest<out T> {
 
     fun <R> map(
         transform: (T) -> R,
-    ): DataRequest<R> =
-        when (this) {
+    ): DataRequest<R> {
+        return when (this) {
             is Loading -> Loading
             is Success -> Success(transform(data))
             is Error -> Error(error)
         }
+    }
 
-    fun getOrNull(): T? = (this as? Success)?.data
+    fun getOrNull(): T? {
+        return (this as? Success)?.data
+    }
 }

@@ -32,8 +32,8 @@ object PokemonColors {
     @Suppress("CyclomaticComplexMethod")
     fun fromType(
         type: PokemonType,
-    ): Color =
-        when (type) {
+    ): Color {
+        return when (type) {
             PokemonType.BUG -> Bug
             PokemonType.DARK -> Dark
             PokemonType.DRAGON -> Dragon
@@ -56,4 +56,5 @@ object PokemonColors {
             PokemonType.WATER -> Water
             PokemonType.UNKNOWN -> Normal
         }
+    }
 }

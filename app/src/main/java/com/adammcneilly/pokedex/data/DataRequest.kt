@@ -3,7 +3,7 @@ package com.adammcneilly.pokedex.data
 sealed interface DataRequest<out T> {
     data object Loading : DataRequest<Nothing>
 
-    data class Success<T>(
+    data class Success<out T>(
         val data: T,
     ) : DataRequest<T>
 

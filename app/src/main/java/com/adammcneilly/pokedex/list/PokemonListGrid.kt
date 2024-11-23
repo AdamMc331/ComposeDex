@@ -15,15 +15,25 @@ import com.adammcneilly.pokedex.displaymodels.ImageDisplayModel
 import com.adammcneilly.pokedex.displaymodels.PokemonDisplayModel
 import com.adammcneilly.pokedex.models.PokemonType
 import com.adammcneilly.pokedex.ui.theme.DexTheme
+import com.adammcneilly.pokedex.ui.util.plus
 
 @Composable
 fun PokemonListGrid(
     pokemonList: List<PokemonDisplayModel>,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(),
 ) {
+    /**
+     * Card needs to be big enough to support a default image and component padding on each side.
+     * Other than that, adapt to show as many as we can in the available width.
+     */
+    val cardMinSize = DexTheme.dimensions.imageSizeDefault + (DexTheme.dimensions.componentPadding * 2)
+
     LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
-        contentPadding = PaddingValues(DexTheme.dimensions.screenPadding),
+        columns = GridCells.Adaptive(
+            minSize = cardMinSize,
+        ),
+        contentPadding = contentPadding + PaddingValues(DexTheme.dimensions.screenPadding),
         verticalArrangement = Arrangement.spacedBy(DexTheme.dimensions.componentPadding),
         horizontalArrangement = Arrangement.spacedBy(DexTheme.dimensions.componentPadding),
         modifier = modifier,

@@ -23,8 +23,16 @@ fun PokemonListGrid(
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
 ) {
+    /**
+     * Card needs to be big enough to support a default image and component padding on each side.
+     * Other than that, adapt to show as many as we can in the available width.
+     */
+    val cardMinSize = DexTheme.dimensions.imageSizeDefault + (DexTheme.dimensions.componentPadding * 2)
+
     LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
+        columns = GridCells.Adaptive(
+            minSize = cardMinSize,
+        ),
         contentPadding = contentPadding + PaddingValues(DexTheme.dimensions.screenPadding),
         verticalArrangement = Arrangement.spacedBy(DexTheme.dimensions.componentPadding),
         horizontalArrangement = Arrangement.spacedBy(DexTheme.dimensions.componentPadding),

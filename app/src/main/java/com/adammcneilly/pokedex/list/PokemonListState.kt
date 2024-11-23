@@ -1,8 +1,40 @@
 package com.adammcneilly.pokedex.list
 
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import com.adammcneilly.pokedex.R
 import com.adammcneilly.pokedex.data.DataRequest
+import com.adammcneilly.pokedex.displaymodels.ImageDisplayModel
 import com.adammcneilly.pokedex.displaymodels.PokemonDisplayModel
+import com.adammcneilly.pokedex.models.PokemonType
 
 data class PokemonListState(
     val request: DataRequest<List<PokemonDisplayModel>>,
 )
+
+class PokemonListStatePreviewParameterProvider : PreviewParameterProvider<PokemonListState> {
+    private val loading = PokemonListState(
+        request = DataRequest.Loading,
+    )
+
+    private val success = PokemonListState(
+        request = DataRequest.Success(
+            List(10) {
+                PokemonDisplayModel(
+                    id = 1,
+                    name = "Bulbasaur",
+                    types = listOf(PokemonType.GRASS, PokemonType.POISON),
+                    image = ImageDisplayModel.Local(R.drawable.bulbasaur),
+                )
+            },
+        ),
+    )
+
+    private val error = PokemonListState(
+        request = DataRequest.Error(
+            error = Throwable("Something went wrong"),
+        ),
+    )
+
+    override val values: Sequence<PokemonListState>
+        get() = sequenceOf(loading, success, error)
+}

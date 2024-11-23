@@ -18,7 +18,7 @@ class PokemonListStatePreviewParameterProvider : PreviewParameterProvider<Pokemo
 
     private val success = PokemonListState(
         request = DataRequest.Success(
-            List(10) {
+            List(SAMPLE_LIST_SIZE) {
                 PokemonDisplayModel(
                     id = 1,
                     name = "Bulbasaur",
@@ -37,4 +37,8 @@ class PokemonListStatePreviewParameterProvider : PreviewParameterProvider<Pokemo
 
     override val values: Sequence<PokemonListState>
         get() = sequenceOf(loading, success, error)
+
+    companion object {
+        private const val SAMPLE_LIST_SIZE = 10
+    }
 }

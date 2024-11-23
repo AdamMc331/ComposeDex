@@ -1,6 +1,7 @@
 package com.adammcneilly.pokedex.list
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
@@ -17,6 +18,7 @@ import com.adammcneilly.pokedex.ui.theme.DexTheme
 fun PokemonListContent(
     state: PokemonListState,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(),
 ) {
     when (state.request) {
         is DataRequest.Error -> {
@@ -35,6 +37,7 @@ fun PokemonListContent(
         is DataRequest.Success<List<PokemonDisplayModel>> -> {
             PokemonListGrid(
                 pokemonList = state.request.data,
+                contentPadding = contentPadding,
                 modifier = modifier,
             )
         }

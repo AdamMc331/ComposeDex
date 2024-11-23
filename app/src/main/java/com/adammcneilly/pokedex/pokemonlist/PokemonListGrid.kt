@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex.list
+package com.adammcneilly.pokedex.pokemonlist
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -39,7 +39,7 @@ fun PokemonListGrid(
         modifier = modifier,
     ) {
         items(pokemonList) { pokemon ->
-            PokemonListCard(
+            PokemonListItemCard(
                 pokemon = pokemon,
                 modifier = Modifier
                     .fillMaxWidth(),

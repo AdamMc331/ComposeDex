@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex.list
+package com.adammcneilly.pokedex.pokemonlist
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.PaddingValues

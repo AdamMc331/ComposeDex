@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex.list
+package com.adammcneilly.pokedex.pokemonlist
 
 import com.adammcneilly.pokedex.BasePaparazziTest
 import com.adammcneilly.pokedex.R
@@ -26,7 +26,7 @@ class PokemonListCardPaparazziTest : BasePaparazziTest() {
         )
 
         snapshotScreen {
-            PokemonListCard(
+            PokemonListItemCard(
                 pokemon = pokemon,
             )
         }

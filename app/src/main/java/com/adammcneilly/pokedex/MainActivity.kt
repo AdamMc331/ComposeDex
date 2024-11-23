@@ -7,7 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.adammcneilly.pokedex.list.PokemonListScreen
+import com.adammcneilly.pokedex.pokemonlist.PokemonListScreen
 import com.adammcneilly.pokedex.ui.theme.DexTheme
 import dagger.hilt.android.AndroidEntryPoint
 

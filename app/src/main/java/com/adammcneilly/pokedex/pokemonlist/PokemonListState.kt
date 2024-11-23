@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex.list
+package com.adammcneilly.pokedex.pokemonlist
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import com.adammcneilly.pokedex.R

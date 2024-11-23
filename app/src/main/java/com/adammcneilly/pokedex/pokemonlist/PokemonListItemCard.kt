@@ -1,4 +1,4 @@
-package com.adammcneilly.pokedex.list
+package com.adammcneilly.pokedex.pokemonlist
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
@@ -27,7 +27,7 @@ import com.adammcneilly.pokedex.ui.theme.DexTheme
 import com.adammcneilly.pokedex.ui.theme.PokemonTypeTheme
 
 @Composable
-fun PokemonListCard(
+fun PokemonListItemCard(
     pokemon: PokemonDisplayModel,
     modifier: Modifier = Modifier,
 ) {
@@ -87,6 +87,6 @@ private fun PokemonListCardPreview(
     )
 
     DexTheme {
-        PokemonListCard(pokemon)
+        PokemonListItemCard(pokemon)
     }
 }

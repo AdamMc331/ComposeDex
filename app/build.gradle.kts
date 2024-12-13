@@ -54,12 +54,6 @@ android {
 }
 
 dependencies {
-    ksp(libs.androidx.room.compiler)
-    ksp(libs.hilt.compiler)
-    ksp(libs.square.moshi.kotlin.codegen)
-
-    kspAndroidTest(libs.hilt.android.compiler)
-
     implementation(platform(libs.compose.bom))
     implementation(libs.android.material)
     implementation(libs.androidx.activity.compose)
@@ -97,6 +91,12 @@ dependencies {
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.compose.ui.test.junit)
     androidTestImplementation(libs.hilt.android.testing)
+
+    ksp(libs.androidx.room.compiler)
+    ksp(libs.hilt.compiler)
+    ksp(libs.square.moshi.kotlin.codegen)
+
+    kspAndroidTest(libs.hilt.android.compiler)
 }
 
 apollo {

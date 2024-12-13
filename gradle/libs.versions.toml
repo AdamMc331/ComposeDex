@@ -5,7 +5,7 @@ apollo = "4.1.0"
 appCompat = "1.7.0"
 coil = "3.0.3"
 compileSdk = "35"
-composeBom = "2024.11.00"
+composeBom = "2024.12.01"
 composeXr = "1.0.0-alpha01"
 detektGradlePlugin = "1.23.7"
 espresso = "3.6.1"
@@ -46,7 +46,7 @@ androidx-xr-compose-material = { module = "androidx.xr.compose.material3:materia
 apollo-runtime = { module = "com.apollographql.apollo:apollo-runtime", version.ref = "apollo" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
 coil-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil" }
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-bom = { group = "androidx.compose", name = "compose-bom-alpha", version.ref = "composeBom" }
 compose-material = { group = "androidx.compose.material3", name = "material3" }
 compose-material-adaptive-navigation = { group = "androidx.compose.material3", name = "material3-adaptive-navigation-suite" }
 compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }

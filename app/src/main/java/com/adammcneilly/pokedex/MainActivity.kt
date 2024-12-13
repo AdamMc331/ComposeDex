@@ -4,15 +4,18 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.xr.compose.material3.EnableXrComponentOverrides
+import androidx.xr.compose.material3.ExperimentalMaterial3XrApi
 import com.adammcneilly.pokedex.pokemonlist.PokemonListScreen
 import com.adammcneilly.pokedex.ui.theme.DexTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @OptIn(ExperimentalMaterial3XrApi::class)
     override fun onCreate(
         savedInstanceState: Bundle?,
     ) {
@@ -21,13 +24,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             enableEdgeToEdge()
 
-            DexTheme {
-                Scaffold { scaffoldPadding ->
-                    PokemonListScreen(
-                        contentPadding = scaffoldPadding,
-                        modifier = Modifier
-                            .fillMaxSize(),
-                    )
+            EnableXrComponentOverrides {
+                DexTheme {
+                    NavigationSuiteContainer {
+                        PokemonListScreen(
+                            contentPadding = PaddingValues(),
+                            modifier = Modifier
+                                .fillMaxSize(),
+                        )
+                    }
                 }
             }
         }

@@ -1,14 +1,20 @@
 package com.adammcneilly.pokedex.pokemonlist
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -41,27 +47,54 @@ fun PokemonListItemCard(
             modifier = modifier
                 .width(IntrinsicSize.Min),
         ) {
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(DexTheme.dimensions.componentPadding),
-            ) {
-                ImageWrapper(
-                    image = pokemon.image,
-                    contentDescription = null,
+            Box {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
-                        .size(DexTheme.dimensions.imageSizeDefault),
-                )
+                        .padding(DexTheme.dimensions.componentPadding)
+                        .fillMaxWidth(),
+                ) {
+                    ImageWrapper(
+                        image = pokemon.image,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(DexTheme.dimensions.imageSizeDefault),
+                    )
 
-                Text(
-                    text = pokemon.name,
-                    style = MaterialTheme.typography.titleMedium,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
+                    Text(
+                        text = pokemon.name,
+                        style = MaterialTheme.typography.titleMedium,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                        modifier = Modifier
+                            .padding(top = DexTheme.dimensions.componentPadding),
+                    )
+                }
+
+                IconButton(
+                    onClick = {
+                        // Handle favorite clicked
+                    },
                     modifier = Modifier
-                        .padding(top = DexTheme.dimensions.componentPadding),
-                )
+                        .align(Alignment.TopEnd),
+                ) {
+                    val icon = if (pokemon.isFavorite) {
+                        Icons.Default.Favorite
+                    } else {
+                        Icons.Default.FavoriteBorder
+                    }
+
+                    val contentDescription = if (pokemon.isFavorite) {
+                        "Remove Favorite"
+                    } else {
+                        "Favorite"
+                    }
+
+                    Icon(
+                        imageVector = icon,
+                        contentDescription = contentDescription,
+                    )
+                }
             }
         }
     }
@@ -84,6 +117,30 @@ private fun PokemonListCardPreview(
         name = "Bulbasaur",
         types = listOf(type),
         image = ImageDisplayModel.Local(R.drawable.bulbasaur),
+        isFavorite = false,
+    )
+
+    DexTheme {
+        PokemonListItemCard(pokemon)
+    }
+}
+
+@Preview(
+    name = "Day Mode",
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
+)
+@Preview(
+    name = "Night Mode",
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+)
+@Composable
+private fun FavoritePokemonListCardPreview() {
+    val pokemon = PokemonDisplayModel(
+        id = 1,
+        name = "Bulbasaur",
+        types = listOf(PokemonType.GRASS),
+        image = ImageDisplayModel.Local(R.drawable.bulbasaur),
+        isFavorite = false,
     )
 
     DexTheme {

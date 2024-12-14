@@ -24,6 +24,7 @@ class PokemonListStatePreviewParameterProvider : PreviewParameterProvider<Pokemo
                     name = "Bulbasaur",
                     types = listOf(PokemonType.GRASS, PokemonType.POISON),
                     image = ImageDisplayModel.Local(R.drawable.bulbasaur),
+                    isFavorite = false,
                 )
             },
         ),

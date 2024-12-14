@@ -40,6 +40,12 @@ class ApolloPokeAPIService @Inject constructor(
                 emit(DataRequest.Loading)
             }
     }
+
+    override suspend fun insertPokemonList(
+        pokemonList: List<Pokemon>,
+    ) {
+        throw IllegalStateException("ApolloPokeAPIService does not support inserting as it is not a local repository.")
+    }
 }
 
 private fun PokemonSummaryListQuery.Pokemon_v2_pokemon.toPokemon(): Pokemon =

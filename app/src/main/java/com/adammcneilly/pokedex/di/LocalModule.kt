@@ -23,6 +23,8 @@ object LocalModule {
             context = appContext,
             klass = PokedexDatabase::class.java,
             name = "pokedex.db",
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 }

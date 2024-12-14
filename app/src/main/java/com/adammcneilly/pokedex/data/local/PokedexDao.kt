@@ -7,6 +7,7 @@ import androidx.room.Query
 import com.adammcneilly.pokedex.data.local.dto.PokemonDTO
 import com.adammcneilly.pokedex.data.local.dto.PokemonInfoDTO
 import com.adammcneilly.pokedex.data.local.dto.PokemonTypeDTO
+import com.adammcneilly.pokedex.data.local.dto.PokemonTypePairDTO
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -24,7 +25,14 @@ interface PokedexDao {
     @Insert(
         onConflict = OnConflictStrategy.IGNORE,
     )
-    fun insertType(
-        type: PokemonTypeDTO,
+    fun insertTypes(
+        types: List<PokemonTypeDTO>,
+    )
+
+    @Insert(
+        onConflict = OnConflictStrategy.IGNORE,
+    )
+    fun insertTypePairs(
+        typePairs: List<PokemonTypePairDTO>,
     )
 }

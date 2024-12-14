@@ -6,4 +6,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface PokemonRepository {
     fun observePokemonList(): Flow<DataRequest<List<Pokemon>>>
+
+    suspend fun insertPokemonList(
+        pokemonList: List<Pokemon>,
+    )
 }

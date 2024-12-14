@@ -12,9 +12,10 @@ import javax.inject.Singleton
 object RemoteModule {
     @Provides
     @Singleton
-    fun provideApolloClient(): ApolloClient =
-        ApolloClient
+    fun provideApolloClient(): ApolloClient {
+        return ApolloClient
             .Builder()
             .serverUrl("https://beta.pokeapi.co/graphql/v1beta")
             .build()
+    }
 }

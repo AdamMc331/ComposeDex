@@ -8,8 +8,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -42,13 +47,11 @@ fun PokemonListItemCard(
             modifier = modifier
                 .width(IntrinsicSize.Min),
         ) {
-            Box(
-                modifier = Modifier
-                    .padding(DexTheme.dimensions.componentPadding),
-            ) {
+            Box {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
+                        .padding(DexTheme.dimensions.componentPadding)
                         .fillMaxWidth(),
                 ) {
                     ImageWrapper(
@@ -65,6 +68,31 @@ fun PokemonListItemCard(
                         overflow = TextOverflow.Ellipsis,
                         modifier = Modifier
                             .padding(top = DexTheme.dimensions.componentPadding),
+                    )
+                }
+
+                IconButton(
+                    onClick = {
+                        // Handle favorite clicked
+                    },
+                    modifier = Modifier
+                        .align(Alignment.TopEnd),
+                ) {
+                    val icon = if (pokemon.isFavorite) {
+                        Icons.Default.Favorite
+                    } else {
+                        Icons.Default.FavoriteBorder
+                    }
+
+                    val contentDescription = if (pokemon.isFavorite) {
+                        "Remove Favorite"
+                    } else {
+                        "Favorite"
+                    }
+
+                    Icon(
+                        imageVector = icon,
+                        contentDescription = contentDescription,
                     )
                 }
             }

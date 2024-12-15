@@ -6,11 +6,13 @@ data class ItemDisplayModel(
     val id: String,
     val name: String,
     val image: ImageDisplayModel,
+    val description: String,
 ) {
     constructor(item: Item) : this(
         id = item.id,
         name = item.parseName(),
         image = ImageDisplayModel.remoteOrPlaceholder(item.imageUrl),
+        description = item.description,
     )
 }
 

@@ -1,6 +1,7 @@
 package com.adammcneilly.pokedex.itemslist
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -27,6 +28,7 @@ fun ItemsListCard(
         modifier = modifier,
     ) {
         Column(
+            verticalArrangement = Arrangement.spacedBy(8.dp),
             modifier = Modifier
                 .padding(DexTheme.dimensions.componentPadding),
         ) {
@@ -42,6 +44,10 @@ fun ItemsListCard(
                 style = MaterialTheme.typography.titleMedium,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
+            )
+
+            Text(
+                text = item.description,
             )
         }
     }
@@ -61,6 +67,7 @@ private fun ItemsListCardPreview() {
         id = "1",
         name = "Master Ball",
         image = ImageDisplayModel.Local(R.drawable.masterball),
+        description = "The best BALL with the ultimate\nperformance. It will catch any wild\nPOKéMON without fail.",
     )
 
     DexTheme {

@@ -13,7 +13,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.adammcneilly.pokedex.home.HomeNavigationContainer
 import com.adammcneilly.pokedex.home.HomeTab
-import com.adammcneilly.pokedex.pokemonlist.PokemonListScreen
+import com.adammcneilly.pokedex.itemslist.ItemsListScreen
 import com.adammcneilly.pokedex.ui.theme.DexTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
                     },
                 ) {
                     Scaffold { scaffoldPadding ->
-                        PokemonListScreen(
+                        ItemsListScreen(
                             contentPadding = scaffoldPadding,
                             modifier = Modifier
                                 .fillMaxSize(),

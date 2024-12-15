@@ -43,9 +43,10 @@ class PokemonListViewModel @Inject constructor(
     }
 }
 
-private fun DataRequest<List<Pokemon>>.mapToDisplayModels(): DataRequest<List<PokemonDisplayModel>> =
-    this.map { pokemonList ->
+private fun DataRequest<List<Pokemon>>.mapToDisplayModels(): DataRequest<List<PokemonDisplayModel>> {
+    return this.map { pokemonList ->
         pokemonList.map { pokemon ->
             PokemonDisplayModel(pokemon)
         }
     }
+}

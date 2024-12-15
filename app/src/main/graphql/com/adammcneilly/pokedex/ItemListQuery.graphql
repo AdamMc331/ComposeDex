@@ -1,0 +1,27 @@
+query ItemListQuery(
+    $versionGroupId: Int!,
+) {
+    pokemon_v2_item_aggregate(
+        where: {
+            pokemon_v2_itemflavortexts: {
+                version_group_id: {
+                    _eq: $versionGroupId
+                }
+            }
+        }
+    ) {
+        nodes {
+            id
+            name
+            pokemon_v2_itemflavortexts(
+                where: {
+                    version_group_id: {
+                        _eq: $versionGroupId
+                    }
+                }
+            ) {
+                flavor_text
+            }
+        }
+    }
+}

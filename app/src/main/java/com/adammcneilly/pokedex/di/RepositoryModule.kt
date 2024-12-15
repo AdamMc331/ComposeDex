@@ -1,6 +1,8 @@
 package com.adammcneilly.pokedex.di
 
-import com.adammcneilly.pokedex.data.remote.ApolloPokeAPIService
+import com.adammcneilly.pokedex.data.remote.ApolloItemRepository
+import com.adammcneilly.pokedex.data.remote.ApolloPokemonRepository
+import com.adammcneilly.pokedex.data.repositories.ItemRepository
 import com.adammcneilly.pokedex.data.repositories.PokemonRepository
 import dagger.Binds
 import dagger.Module
@@ -16,6 +18,11 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepositoryModule {
     @Binds
     abstract fun bindPokemonRepository(
-        pokemonRepositoryImpl: ApolloPokeAPIService,
+        pokemonRepositoryImpl: ApolloPokemonRepository,
     ): PokemonRepository
+
+    @Binds
+    abstract fun bindItemRepository(
+        pokemonRepositoryImpl: ApolloItemRepository,
+    ): ItemRepository
 }

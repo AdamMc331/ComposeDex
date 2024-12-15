@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import javax.inject.Inject
 
-class ApolloPokeAPIService @Inject constructor(
+class ApolloPokemonRepository @Inject constructor(
     private val apolloClient: ApolloClient,
 ) : PokemonRepository {
     override fun observePokemonList(): Flow<DataRequest<List<Pokemon>>> {

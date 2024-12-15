@@ -6,6 +6,7 @@ plugins {
     id("kotlin-android")
     alias(libs.plugins.apollo.graphql)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 android {
@@ -60,6 +61,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.room.runtime)
     implementation(libs.apollo.runtime)
     implementation(libs.coil.compose)
@@ -71,6 +73,7 @@ dependencies {
     implementation(libs.compose.ui.tooling)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.material.kolor)
     implementation(libs.square.moshi.kotlin)
     implementation(libs.square.retrofit)

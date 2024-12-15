@@ -13,4 +13,12 @@ sealed interface ImageDisplayModel {
     ) : ImageDisplayModel
 
     data object Placeholder : ImageDisplayModel
+
+    companion object {
+        fun remoteOrPlaceholder(
+            url: String?,
+        ): ImageDisplayModel {
+            return url?.let(::Remote) ?: Placeholder
+        }
+    }
 }

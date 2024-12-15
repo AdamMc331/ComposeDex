@@ -66,7 +66,6 @@ private fun PokemonListGridPreview() {
             name = name,
             types = listOf(type),
             image = ImageDisplayModel.Local(R.drawable.bulbasaur),
-            isFavorite = false,
         )
     }
 

@@ -44,7 +44,6 @@ private fun ItemListQuery.Node.toItem(): Item {
     return Item(
         id = this.id.toString(),
         name = this.name,
-        imageUrl = this.pokemon_v2_itemsprites.firstOrNull()?.sprites,
         description = pokemon_v2_itemflavortexts.first().flavor_text,
     )
 }

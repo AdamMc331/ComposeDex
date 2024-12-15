@@ -25,6 +25,7 @@ fun ItemsListCard(
     modifier: Modifier = Modifier,
 ) {
     Card(
+        shape = MaterialTheme.shapes.large,
         modifier = modifier,
     ) {
         Column(

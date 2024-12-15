@@ -13,9 +13,6 @@ query ItemListQuery(
         nodes {
             id
             name
-            pokemon_v2_itemsprites {
-                sprites
-            }
             pokemon_v2_itemflavortexts(
                 where: {
                     version_group_id: {

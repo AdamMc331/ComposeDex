@@ -3,9 +3,9 @@ package com.adammcneilly.pokedex.itemslist
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.adammcneilly.pokedex.displaymodels.ItemDisplayModel
@@ -18,10 +18,10 @@ fun ItemsListGrid(
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
 ) {
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
+    LazyVerticalStaggeredGrid(
+        columns = StaggeredGridCells.Fixed(2),
         contentPadding = contentPadding + PaddingValues(DexTheme.dimensions.screenPadding),
-        verticalArrangement = Arrangement.spacedBy(DexTheme.dimensions.componentPadding),
+        verticalItemSpacing = DexTheme.dimensions.componentPadding,
         horizontalArrangement = Arrangement.spacedBy(DexTheme.dimensions.componentPadding),
         modifier = modifier,
     ) {

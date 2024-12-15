@@ -1,6 +1,7 @@
 package com.adammcneilly.pokedex.displaymodels
 
 import com.adammcneilly.pokedex.models.Item
+import com.adammcneilly.pokedex.util.ItemImageURLGenerator
 
 data class ItemDisplayModel(
     val id: String,
@@ -11,7 +12,9 @@ data class ItemDisplayModel(
     constructor(item: Item) : this(
         id = item.id,
         name = item.parseName(),
-        image = ImageDisplayModel.remoteOrPlaceholder(item.imageUrl),
+        image = ImageDisplayModel.Remote(
+            ItemImageURLGenerator.generate(item.name),
+        ),
         description = item.description,
     )
 }

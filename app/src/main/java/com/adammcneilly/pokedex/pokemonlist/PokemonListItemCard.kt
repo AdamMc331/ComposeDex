@@ -51,7 +51,7 @@ fun PokemonListItemCard(
                     image = pokemon.image,
                     contentDescription = null,
                     modifier = Modifier
-                        .size(DexTheme.dimensions.imageSizeDefault),
+                        .size(DexTheme.dimensions.imageSizeLarge),
                 )
 
                 Text(

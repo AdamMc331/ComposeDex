@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.adammcneilly.pokedex.R
 import com.adammcneilly.pokedex.displaymodels.ImageDisplayModel
 import com.adammcneilly.pokedex.displaymodels.ItemDisplayModel
@@ -29,7 +28,7 @@ fun ItemsListCard(
         modifier = modifier,
     ) {
         Column(
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(DexTheme.dimensions.itemSpacingCompact),
             modifier = Modifier
                 .padding(DexTheme.dimensions.componentPadding),
         ) {
@@ -37,7 +36,7 @@ fun ItemsListCard(
                 image = item.image,
                 contentDescription = item.name,
                 modifier = Modifier
-                    .size(48.dp),
+                    .size(DexTheme.dimensions.imageSizeDefault),
             )
 
             Text(

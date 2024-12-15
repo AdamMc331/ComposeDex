@@ -6,7 +6,6 @@ query PokemonSummaryListQuery(
         name
         pokemon_v2_pokemontypes {
             pokemon_v2_type {
-                id
                 name
             }
         }

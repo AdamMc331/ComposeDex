@@ -14,7 +14,6 @@ class PokemonListCardPaparazziTest : BasePaparazziTest() {
         name = "Bulbasaur",
         types = listOf(PokemonType.GRASS, PokemonType.POISON),
         image = ImageDisplayModel.Local(R.drawable.bulbasaur),
-        isFavorite = false,
     )
 
     @Test
@@ -24,19 +23,6 @@ class PokemonListCardPaparazziTest : BasePaparazziTest() {
         val pokemon = testPokemon.copy(
             name = type.name,
             types = listOf(type),
-        )
-
-        snapshotScreen {
-            PokemonListItemCard(
-                pokemon = pokemon,
-            )
-        }
-    }
-
-    @Test
-    fun renderFavorite() {
-        val pokemon = testPokemon.copy(
-            isFavorite = true,
         )
 
         snapshotScreen {

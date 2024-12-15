@@ -50,5 +50,4 @@ private fun PokemonSummaryListQuery.Pokemon_v2_pokemon.toPokemon(): Pokemon =
             val typeName = gqlType.pokemon_v2_type?.name.orEmpty()
             PokemonType.valueOf(typeName.uppercase())
         },
-        isFavorite = false,
     )

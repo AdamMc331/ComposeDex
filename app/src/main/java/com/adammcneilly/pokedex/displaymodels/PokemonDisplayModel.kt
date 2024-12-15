@@ -9,7 +9,6 @@ data class PokemonDisplayModel(
     val types: List<PokemonType>,
     val name: String,
     val image: ImageDisplayModel,
-    val isFavorite: Boolean,
 ) {
     constructor(pokemon: Pokemon) : this(
         id = pokemon.id,
@@ -20,6 +19,5 @@ data class PokemonDisplayModel(
         image = ImageDisplayModel.Remote(
             PokemonImageURLGenerator.generate(pokemon.id),
         ),
-        isFavorite = pokemon.isFavorite,
     )
 }

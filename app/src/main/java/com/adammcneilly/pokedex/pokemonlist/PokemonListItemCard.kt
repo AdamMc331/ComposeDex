@@ -78,7 +78,8 @@ fun PokemonListItemCard(
                                 overflow = TextOverflow.Ellipsis,
                                 modifier = Modifier
                                     .background(
-                                        color = MaterialTheme.colorScheme.primaryContainer.darken(TYPE_PILL_DARKEN_RATIO),
+                                        color = MaterialTheme.colorScheme.primaryContainer
+                                            .darken(TYPE_PILL_DARKEN_RATIO),
                                         shape = CircleShape,
                                     )
                                     .padding(DexTheme.dimensions.chipPadding),

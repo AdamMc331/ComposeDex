@@ -26,10 +26,11 @@ fun PokemonListGrid(
     modifier: Modifier = Modifier,
 ) {
     /**
-     * Card needs to be big enough to support a default image and component padding on each side.
-     * Other than that, adapt to show as many as we can in the available width.
+     * A little bit of a magic number here, but the idea is two images, plus padding on side and in between
+     * should be roughly the min size of the card. Once we define that, have our grid adapt
+     * to as many columns as that can fit.
      */
-    val cardMinSize = DexTheme.dimensions.imageSizeLarge + (DexTheme.dimensions.componentPadding * 2)
+    val cardMinSize = (DexTheme.dimensions.imageSizeLarge * 2) + (DexTheme.dimensions.componentPadding * 3)
 
     LazyVerticalGrid(
         columns = GridCells.Adaptive(

@@ -30,6 +30,8 @@ import com.adammcneilly.pokedex.ui.theme.DexTheme
 import com.adammcneilly.pokedex.ui.theme.PokemonTypeTheme
 import com.materialkolor.ktx.darken
 
+private const val TYPE_PILL_DARKEN_RATIO = 1.5F
+
 @Composable
 fun PokemonListItemCard(
     pokemon: PokemonDisplayModel,
@@ -76,7 +78,7 @@ fun PokemonListItemCard(
                                 overflow = TextOverflow.Ellipsis,
                                 modifier = Modifier
                                     .background(
-                                        color = MaterialTheme.colorScheme.primaryContainer.darken(1.5F),
+                                        color = MaterialTheme.colorScheme.primaryContainer.darken(TYPE_PILL_DARKEN_RATIO),
                                         shape = CircleShape,
                                     )
                                     .padding(DexTheme.dimensions.chipPadding),

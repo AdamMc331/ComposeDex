@@ -1,7 +1,5 @@
 package com.adammcneilly.pokedex.ui.theme
 
-import android.annotation.TargetApi
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -25,15 +23,15 @@ private val dexDimensions = Dimensions(
     chipPaddingVertical = 4.dp,
     componentPadding = 16.dp,
     imageSizeDefault = 48.dp,
-    imageSizeLarge = 80.dp,
+    imageSizeLarge = 64.dp,
     itemSpacingCompact = 8.dp,
     itemSpacingDefault = 16.dp,
+    itemSpacingUltraCompact = 4.dp,
     listItemSpacing = 16.dp,
     screenPadding = 16.dp,
 )
 
 @Composable
-@TargetApi(Build.VERSION_CODES.S)
 fun DexTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit,

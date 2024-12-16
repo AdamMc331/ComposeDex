@@ -13,6 +13,7 @@ data class Dimensions(
     val imageSizeLarge: Dp,
     val itemSpacingCompact: Dp,
     val itemSpacingDefault: Dp,
+    val itemSpacingUltraCompact: Dp,
     val listItemSpacing: Dp,
     val screenPadding: Dp,
 ) {
@@ -31,6 +32,7 @@ val LocalDimensions = staticCompositionLocalOf {
         imageSizeLarge = 0.dp,
         itemSpacingCompact = 0.dp,
         itemSpacingDefault = 0.dp,
+        itemSpacingUltraCompact = 0.dp,
         listItemSpacing = 0.dp,
         screenPadding = 0.dp,
     )

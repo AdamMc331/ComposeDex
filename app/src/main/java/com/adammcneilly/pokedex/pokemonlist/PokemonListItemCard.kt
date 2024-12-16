@@ -53,50 +53,83 @@ fun PokemonListItemCard(
                     .fillMaxWidth()
                     .padding(DexTheme.dimensions.componentPadding),
             ) {
-                Text(
-                    text = pokemon.name,
-                    style = MaterialTheme.typography.titleMedium,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
+                PokemonName(pokemon)
 
-                Row(
-                    horizontalArrangement = Arrangement.spacedBy(DexTheme.dimensions.itemSpacingCompact),
-                    modifier = Modifier
-                        .padding(top = DexTheme.dimensions.itemSpacingCompact),
-                ) {
-                    Column(
-                        verticalArrangement = Arrangement.spacedBy(DexTheme.dimensions.itemSpacingUltraCompact),
-                        modifier = Modifier
-                            .weight(1F),
-                    ) {
-                        pokemon.types.forEach { type ->
-                            Text(
-                                text = type.name,
-                                style = MaterialTheme.typography.labelSmall,
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis,
-                                modifier = Modifier
-                                    .background(
-                                        color = MaterialTheme.colorScheme.primaryContainer
-                                            .darken(TYPE_PILL_DARKEN_RATIO),
-                                        shape = CircleShape,
-                                    )
-                                    .padding(DexTheme.dimensions.chipPadding),
-                            )
-                        }
-                    }
-
-                    ImageWrapper(
-                        image = pokemon.image,
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(DexTheme.dimensions.imageSizeLarge),
-                    )
-                }
+                PokemonTypesImage(pokemon)
             }
         }
     }
+}
+
+@Composable
+private fun PokemonName(
+    pokemon: PokemonDisplayModel,
+) {
+    Text(
+        text = pokemon.name,
+        style = MaterialTheme.typography.titleMedium,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis,
+    )
+}
+
+@Composable
+private fun PokemonTypesImage(
+    pokemon: PokemonDisplayModel,
+) {
+    Row(
+        horizontalArrangement = Arrangement.spacedBy(DexTheme.dimensions.itemSpacingCompact),
+        modifier = Modifier
+            .padding(top = DexTheme.dimensions.itemSpacingCompact),
+    ) {
+        PokemonTypesList(
+            pokemon = pokemon,
+            modifier = Modifier
+                .weight(1F),
+        )
+
+        ImageWrapper(
+            image = pokemon.image,
+            contentDescription = null,
+            modifier = Modifier
+                .size(DexTheme.dimensions.imageSizeLarge),
+        )
+    }
+}
+
+@Composable
+private fun PokemonTypesList(
+    pokemon: PokemonDisplayModel,
+    modifier: Modifier = Modifier,
+) {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(DexTheme.dimensions.itemSpacingUltraCompact),
+        modifier = modifier,
+    ) {
+        pokemon.types.forEach { type ->
+            PokemonTypePill(type)
+        }
+    }
+}
+
+@Composable
+private fun PokemonTypePill(
+    type: PokemonType,
+) {
+    val containerColor = MaterialTheme.colorScheme.primaryContainer.darken(TYPE_PILL_DARKEN_RATIO)
+
+    Text(
+        text = type.name,
+        style = MaterialTheme.typography.labelSmall,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis,
+        modifier = Modifier
+            .background(
+                color = containerColor,
+                shape = CircleShape,
+            )
+            .padding(DexTheme.dimensions.chipPadding),
+    )
 }
 
 @Preview(

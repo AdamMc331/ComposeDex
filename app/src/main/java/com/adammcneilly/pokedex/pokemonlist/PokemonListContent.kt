@@ -19,6 +19,7 @@ fun PokemonListContent(
     state: PokemonListState,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
+    onPokemonClicked: (Int) -> Unit = {},
 ) {
     when (state.request) {
         is DataRequest.Error -> {
@@ -38,6 +39,7 @@ fun PokemonListContent(
             PokemonListGrid(
                 pokemonList = state.request.data,
                 contentPadding = contentPadding,
+                onPokemonClicked = onPokemonClicked,
                 modifier = modifier,
             )
         }

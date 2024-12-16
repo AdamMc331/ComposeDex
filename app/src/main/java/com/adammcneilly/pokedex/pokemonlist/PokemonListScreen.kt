@@ -13,12 +13,14 @@ fun PokemonListScreen(
     modifier: Modifier = Modifier,
     viewModel: PokemonListViewModel = hiltViewModel(),
     contentPadding: PaddingValues = PaddingValues(),
+    onPokemonClicked: (Int) -> Unit = {},
 ) {
     val state = viewModel.state.collectAsState()
 
     PokemonListContent(
         state = state.value,
         contentPadding = contentPadding,
+        onPokemonClicked = onPokemonClicked,
         modifier = modifier
             .fillMaxSize(),
     )

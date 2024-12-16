@@ -1,6 +1,7 @@
 package com.adammcneilly.pokedex.pokemonlist
 
 import android.content.res.Configuration
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -22,6 +23,7 @@ fun PokemonListGrid(
     pokemonList: List<PokemonDisplayModel>,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
+    onPokemonClicked: (Int) -> Unit = {},
 ) {
     /**
      * Card needs to be big enough to support a default image and component padding on each side.
@@ -42,7 +44,10 @@ fun PokemonListGrid(
             PokemonListItemCard(
                 pokemon = pokemon,
                 modifier = Modifier
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .clickable {
+                        onPokemonClicked.invoke(pokemon.id)
+                    },
             )
         }
     }

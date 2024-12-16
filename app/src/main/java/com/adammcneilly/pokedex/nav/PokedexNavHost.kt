@@ -6,7 +6,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.toRoute
 import com.adammcneilly.pokedex.itemslist.ItemsListScreen
 import com.adammcneilly.pokedex.pokemondetail.PokemonDetailScreen
 import com.adammcneilly.pokedex.pokemonlist.PokemonListScreen
@@ -27,7 +26,7 @@ fun PokedexNavHost(
                 contentPadding = contentPadding,
                 onPokemonClicked = { pokemonId ->
                     navController.navigate(PokemonDetailScreen(pokemonId))
-                }
+                },
             )
         }
 
@@ -38,7 +37,9 @@ fun PokedexNavHost(
         }
 
         composable<PokemonDetailScreen> {
-            PokemonDetailScreen()
+            PokemonDetailScreen(
+                contentPadding = contentPadding,
+            )
         }
     }
 }

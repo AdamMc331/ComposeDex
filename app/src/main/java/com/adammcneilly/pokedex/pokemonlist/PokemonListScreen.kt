@@ -10,10 +10,10 @@ import kotlinx.serialization.Serializable
 
 @Composable
 fun PokemonListScreen(
+    contentPadding: PaddingValues,
+    onPokemonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: PokemonListViewModel = hiltViewModel(),
-    contentPadding: PaddingValues = PaddingValues(),
-    onPokemonClicked: (Int) -> Unit = {},
 ) {
     val state = viewModel.state.collectAsState()
 

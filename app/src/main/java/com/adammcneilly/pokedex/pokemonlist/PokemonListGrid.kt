@@ -21,9 +21,9 @@ import com.adammcneilly.pokedex.ui.util.plus
 @Composable
 fun PokemonListGrid(
     pokemonList: List<PokemonDisplayModel>,
+    contentPadding: PaddingValues,
+    onPokemonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier,
-    contentPadding: PaddingValues = PaddingValues(),
-    onPokemonClicked: (Int) -> Unit = {},
 ) {
     /**
      * Card needs to be big enough to support a default image and component padding on each side.
@@ -75,6 +75,10 @@ private fun PokemonListGridPreview() {
     }
 
     DexTheme {
-        PokemonListGrid(pokemonList)
+        PokemonListGrid(
+            pokemonList = pokemonList,
+            contentPadding = PaddingValues(),
+            onPokemonClicked = {},
+        )
     }
 }

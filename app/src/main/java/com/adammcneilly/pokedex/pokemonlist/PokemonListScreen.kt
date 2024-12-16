@@ -10,15 +10,17 @@ import kotlinx.serialization.Serializable
 
 @Composable
 fun PokemonListScreen(
+    contentPadding: PaddingValues,
+    onPokemonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: PokemonListViewModel = hiltViewModel(),
-    contentPadding: PaddingValues = PaddingValues(),
 ) {
     val state = viewModel.state.collectAsState()
 
     PokemonListContent(
         state = state.value,
         contentPadding = contentPadding,
+        onPokemonClicked = onPokemonClicked,
         modifier = modifier
             .fillMaxSize(),
     )

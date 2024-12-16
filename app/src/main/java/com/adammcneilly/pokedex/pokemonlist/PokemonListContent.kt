@@ -17,8 +17,9 @@ import com.adammcneilly.pokedex.ui.theme.DexTheme
 @Composable
 fun PokemonListContent(
     state: PokemonListState,
+    contentPadding: PaddingValues,
+    onPokemonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier,
-    contentPadding: PaddingValues = PaddingValues(),
 ) {
     when (state.request) {
         is DataRequest.Error -> {
@@ -38,6 +39,7 @@ fun PokemonListContent(
             PokemonListGrid(
                 pokemonList = state.request.data,
                 contentPadding = contentPadding,
+                onPokemonClicked = onPokemonClicked,
                 modifier = modifier,
             )
         }
@@ -60,6 +62,8 @@ private fun PokemonListContentPreview(
         Surface {
             PokemonListContent(
                 state = state,
+                contentPadding = PaddingValues(),
+                onPokemonClicked = {},
                 modifier = Modifier
                     .fillMaxSize(),
             )

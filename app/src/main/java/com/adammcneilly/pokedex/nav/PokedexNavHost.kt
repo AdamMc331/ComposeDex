@@ -3,7 +3,6 @@ package com.adammcneilly.pokedex.nav
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -23,8 +22,6 @@ fun PokedexNavHost(
         modifier = modifier,
     ) {
         composable<PokemonListScreen> {
-            val localContext = LocalContext.current
-
             PokemonListScreen(
                 contentPadding = contentPadding,
                 onPokemonClicked = { pokemonId ->

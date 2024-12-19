@@ -17,7 +17,7 @@ data class PokemonDisplayModel(
             char.uppercase()
         },
         image = ImageDisplayModel.Remote(
-            PokemonImageURLGenerator.generate(pokemon.id),
+            PokemonImageURLGenerator.generateImageUrl(pokemon.id),
         ),
     )
 }

@@ -1,6 +1,12 @@
 package com.adammcneilly.pokedex.home
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CloseFullscreen
+import androidx.compose.material.icons.filled.OpenInFull
+import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -8,12 +14,16 @@ import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScaffo
 import androidx.compose.material3.adaptive.navigationsuite.NavigationSuiteScope
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.xr.compose.platform.LocalSession
+import androidx.xr.compose.platform.LocalSpatialCapabilities
 import com.adammcneilly.pokedex.nav.PokedexNavHost
 
 @Composable
@@ -45,13 +55,58 @@ fun HomeNavigationContainer(
         modifier = modifier,
     ) {
         Scaffold { scaffoldPadding ->
-            PokedexNavHost(
-                navController = navController,
-                contentPadding = scaffoldPadding,
+            Box(
                 modifier = Modifier
-                    .fillMaxSize(),
-            )
+                    .fillMaxSize()
+                    .padding(scaffoldPadding),
+            ) {
+                PokedexNavHost(
+                    navController = navController,
+                    contentPadding = scaffoldPadding,
+                    modifier = Modifier
+                        .fillMaxSize(),
+                )
+
+                SpatialModeSwitchFab(
+                    modifier = Modifier
+                        .align(Alignment.BottomEnd),
+                )
+            }
         }
+    }
+}
+
+@Composable
+private fun SpatialModeSwitchFab(
+    modifier: Modifier = Modifier,
+) {
+    val xrSession = LocalSession.current ?: return
+
+    val hasSpatialUi = LocalSpatialCapabilities.current.isSpatialUiEnabled
+
+    FloatingActionButton(
+        onClick = {
+            if (hasSpatialUi) {
+                xrSession.requestHomeSpaceMode()
+            } else {
+                xrSession.requestFullSpaceMode()
+            }
+        },
+        modifier = modifier
+            .padding(32.dp),
+    ) {
+        Icon(
+            imageVector = if (hasSpatialUi) {
+                Icons.Default.CloseFullscreen
+            } else {
+                Icons.Default.OpenInFull
+            },
+            contentDescription = if (hasSpatialUi) {
+                "Exit Full Space Mode"
+            } else {
+                "Enter Full Space Mode"
+            },
+        )
     }
 }
 

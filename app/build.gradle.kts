@@ -63,6 +63,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.xr.compose)
+    implementation(libs.androidx.xr.compose.material3)
     implementation(libs.apollo.runtime)
     implementation(libs.coil.compose)
     implementation(libs.coil.okhttp)

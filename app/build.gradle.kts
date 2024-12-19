@@ -65,6 +65,7 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.xr.compose)
     implementation(libs.androidx.xr.compose.material3)
+    implementation(libs.androidx.xr.scenecore)
     implementation(libs.apollo.runtime)
     implementation(libs.coil.compose)
     implementation(libs.coil.okhttp)

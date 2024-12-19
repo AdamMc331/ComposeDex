@@ -48,6 +48,8 @@ androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core",
 androidx-test-junit = { module = "androidx.test.ext:junit", version.ref = "androidxTest" }
 androidx-xr-compose = { module = "androidx.xr.compose:compose", version.ref = "xr" }
 androidx-xr-compose-material3 = { module = "androidx.xr.compose.material3:material3", version.ref = "xr" }
+# Note: Not obvious that we needed this dependency until we try to reference `LocalSession.current`.
+androidx-xr-scenecore = { module = "androidx.xr.scenecore:scenecore", version.ref = "xr" }
 apollo-runtime = { module = "com.apollographql.apollo:apollo-runtime", version.ref = "apollo" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
 coil-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coil" }

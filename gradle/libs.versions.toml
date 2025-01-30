@@ -33,7 +33,7 @@ room = "2.6.1"
 sortDependencies = "0.13"
 testParameterInjector = "1.18"
 truth = "1.4.4"
-xr = "1.0.0-alpha01"
+xr = "1.0.0-alpha02"
 
 [libraries]
 android-material = { module = "com.google.android.material:material", version.ref = "material" }

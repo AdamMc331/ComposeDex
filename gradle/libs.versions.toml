@@ -21,7 +21,7 @@ ktxCore = "1.15.0"
 leakCanary = "2.14"
 lifecycle = "2.8.7"
 material = "1.12.0"
-materialKolor = "2.0.1"
+materialKolor = "2.0.2"
 # 32 seems really high, is there something M3 can do?
 # Another m3 note: navigation rail item selected item label is the wrong color
 minSdk = "32"

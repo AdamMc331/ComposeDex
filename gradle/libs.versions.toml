@@ -19,7 +19,7 @@ kotlinxSerializationJson = "1.8.1"
 ksp = "2.1.0-1.0.29"
 ktxCore = "1.16.0"
 leakCanary = "2.14"
-lifecycle = "2.8.7"
+lifecycle = "2.9.0"
 material = "1.12.0"
 materialKolor = "2.1.1"
 # 32 seems really high, is there something M3 can do?
